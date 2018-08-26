@@ -1,4 +1,4 @@
 
 def hello(event, context):
-    print("2ed update~!")
+    print("3ed update~!")
     return "hello aws-python"
