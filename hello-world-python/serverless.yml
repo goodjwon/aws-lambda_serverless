@@ -22,6 +22,8 @@ provider:
   runtime: python2.7
   profile: serverless-admin
   region: ap-northeast-2
+  memorySize: 128
+  timeout: 3
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
@@ -56,8 +58,12 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
+  hello-short-timeout:
     handler: handler.hello
+  hello-long-timeout:
+    handler: handler.hello
+    memorySize: 256
+    timeout: 6
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
